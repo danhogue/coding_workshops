@@ -1,14 +1,14 @@
 // EMCAScript 2022 - ES2022 - ES13
 
-// top level await
+// Top level await and dynamic import
 // Notes:
-// Export in i18n.en.js and top level await need "type": "module" setting
-// in package.js to work
-// await Promise.resolve(console.log("Hello"));
+//  Export in i18n.en.js and top level await need "type": "module" setting
+//  in package.js to work
+await Promise.resolve(console.log("Hello"));
 {
   const navigator = { language: 'en' }
   const { i18n } = await import(`./i18n/${navigator.language}.js`);
-  // await Promise.resolve(console.log(i18n.hello));
+  await Promise.resolve(console.log(i18n.hello));
 }
 
 // Private instance fields and methods
